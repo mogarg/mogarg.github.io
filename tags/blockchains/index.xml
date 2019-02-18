@@ -6,7 +6,7 @@
     <description>Recent content in Blockchains on Mohit Garg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Feb 2018 12:41:05 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 11 Sep 2018 12:41:05 -0500</lastBuildDate>
     
 	<atom:link href="https://mogarg.github.io/tags/blockchains/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,11 +14,21 @@
     <item>
       <title>Elpis</title>
       <link>https://mogarg.github.io/projects/creations/elpis/</link>
-      <pubDate>Sun, 11 Feb 2018 12:41:05 -0500</pubDate>
+      <pubDate>Tue, 11 Sep 2018 12:41:05 -0500</pubDate>
       
       <guid>https://mogarg.github.io/projects/creations/elpis/</guid>
-      <description>Thesis Elpis
+      <description>Thesis My thesis can be found here.
 Motivation While internet services are designed and deployed with an assumption of perimeter less security at the application layer, most production distributed systems today are designed assuming a classical Crash Fault Tolerant (CFT) model. In realistic deployment scenarios, keeping track of all bridged networks such as smartphones, network printers, etc. is almost impossible. Hence, designing distributed systems without considering the possibility of an active adversary makes the system vulnerable from its core.</description>
+    </item>
+    
+    <item>
+      <title>Apollo</title>
+      <link>https://mogarg.github.io/projects/creations/apollo/</link>
+      <pubDate>Fri, 10 Aug 2018 12:41:05 -0500</pubDate>
+      
+      <guid>https://mogarg.github.io/projects/creations/apollo/</guid>
+      <description>Apollo is a ticketing management system prototype. Musical events have several stakeholders like the music label, the venue management and the artist themself. This smart-contract adds transparency to the process. Major features include:
+ Buying tickets for a show, requiring the correct amount tickets cost Transferring tickets to other wallets Verifying ownership of tickets through contract methods.  For more information, please check out https://github.com/mogarg/Apollo)</description>
     </item>
     
   </channel>

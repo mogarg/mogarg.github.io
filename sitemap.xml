@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://mogarg.github.io/projects/creations/</loc>
-    <lastmod>2018-02-11T12:41:05-05:00</lastmod>
+    <lastmod>2018-09-11T12:41:05-05:00</lastmod>
     <priority>0.5</priority>
   </url>
   
@@ -36,7 +36,12 @@
   
   <url>
     <loc>https://mogarg.github.io/projects/creations/elpis/</loc>
-    <lastmod>2018-02-11T12:41:05-05:00</lastmod>
+    <lastmod>2018-09-11T12:41:05-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mogarg.github.io/projects/creations/apollo/</loc>
+    <lastmod>2018-08-10T12:41:05-05:00</lastmod>
   </url>
   
   <url>
@@ -58,13 +63,13 @@
   
   <url>
     <loc>https://mogarg.github.io/tags/blockchains/</loc>
-    <lastmod>2018-02-11T12:41:05-05:00</lastmod>
+    <lastmod>2018-09-11T12:41:05-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mogarg.github.io/tags/byzantine-fault-tolerance/</loc>
-    <lastmod>2018-02-11T12:41:05-05:00</lastmod>
+    <lastmod>2018-09-11T12:41:05-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -105,12 +110,24 @@
   
   <url>
     <loc>https://mogarg.github.io/tags/dht/</loc>
-    <lastmod>2018-02-11T12:41:05-05:00</lastmod>
+    <lastmod>2018-09-11T12:41:05-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mogarg.github.io/tags/docker/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mogarg.github.io/tags/golang/</loc>
+    <lastmod>2018-08-10T12:41:05-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mogarg.github.io/tags/hyperledger/</loc>
+    <lastmod>2018-08-10T12:41:05-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -121,7 +138,7 @@
   
   <url>
     <loc>https://mogarg.github.io/tags/java/</loc>
-    <lastmod>2018-02-11T12:41:05-05:00</lastmod>
+    <lastmod>2018-09-11T12:41:05-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -146,6 +163,7 @@
   
   <url>
     <loc>https://mogarg.github.io/tags/node.js/</loc>
+    <lastmod>2018-08-10T12:41:05-05:00</lastmod>
     <priority>0</priority>
   </url>
   
