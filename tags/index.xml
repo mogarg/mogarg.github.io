@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Mohit Garg</title>
@@ -75,11 +75,11 @@
     </item>
     
     <item>
-      <title>CI/CD pipelines</title>
-      <link>https://mogarg.github.io/tags/ci/cd-pipelines/</link>
+      <title>agile</title>
+      <link>https://mogarg.github.io/tags/agile/</link>
       <pubDate>Tue, 08 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://mogarg.github.io/tags/ci/cd-pipelines/</guid>
+      <guid>https://mogarg.github.io/tags/agile/</guid>
       <description></description>
     </item>
     
@@ -120,20 +120,20 @@
     </item>
     
     <item>
-      <title>agile</title>
-      <link>https://mogarg.github.io/tags/agile/</link>
-      <pubDate>Tue, 08 Nov 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://mogarg.github.io/tags/agile/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Bamboo</title>
       <link>https://mogarg.github.io/tags/bamboo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mogarg.github.io/tags/bamboo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CI/CD pipelines</title>
+      <link>https://mogarg.github.io/tags/ci/cd-pipelines/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mogarg.github.io/tags/ci/cd-pipelines/</guid>
       <description></description>
     </item>
     
@@ -147,11 +147,11 @@
     </item>
     
     <item>
-      <title>JSON</title>
-      <link>https://mogarg.github.io/tags/json/</link>
+      <title>iOS</title>
+      <link>https://mogarg.github.io/tags/ios/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mogarg.github.io/tags/json/</guid>
+      <guid>https://mogarg.github.io/tags/ios/</guid>
       <description></description>
     </item>
     
@@ -165,6 +165,24 @@
     </item>
     
     <item>
+      <title>jQuery</title>
+      <link>https://mogarg.github.io/tags/jquery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mogarg.github.io/tags/jquery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JSON</title>
+      <link>https://mogarg.github.io/tags/json/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mogarg.github.io/tags/json/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Objective-C</title>
       <link>https://mogarg.github.io/tags/objective-c/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -174,7 +192,7 @@
     </item>
     
     <item>
-      <title>Rest APIs</title>
+      <title>REST APIs</title>
       <link>https://mogarg.github.io/tags/rest-apis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -188,24 +206,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mogarg.github.io/tags/swift/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>iOS</title>
-      <link>https://mogarg.github.io/tags/ios/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://mogarg.github.io/tags/ios/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>jQuery</title>
-      <link>https://mogarg.github.io/tags/jquery/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://mogarg.github.io/tags/jquery/</guid>
       <description></description>
     </item>
     
