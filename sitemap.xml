@@ -35,6 +35,41 @@
   </url>
   
   <url>
+    <loc>https://mogarg.github.io/blog/</loc>
+    <lastmod>2020-05-24T16:13:10-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mogarg.github.io/tags/cloud/</loc>
+    <lastmod>2020-05-24T16:13:10-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mogarg.github.io/tags/distributed-systems/</loc>
+    <lastmod>2020-05-24T16:13:10-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mogarg.github.io/tags/gray-failures/</loc>
+    <lastmod>2020-05-24T16:13:10-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mogarg.github.io/tags/membership/</loc>
+    <lastmod>2020-05-24T16:13:10-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mogarg.github.io/blog/05-24-2020-rapid-membership/</loc>
+    <lastmod>2020-05-24T16:13:10-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mogarg.github.io/tags/</loc>
+    <lastmod>2020-05-24T16:13:10-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mogarg.github.io/tags/blockchains/</loc>
     <lastmod>2018-09-11T12:41:05-05:00</lastmod>
   </url>
@@ -63,11 +98,6 @@
     <loc>https://mogarg.github.io/projects/</loc>
     <lastmod>2018-09-11T12:41:05-05:00</lastmod>
     <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://mogarg.github.io/tags/</loc>
-    <lastmod>2018-09-11T12:41:05-05:00</lastmod>
   </url>
   
   <url>

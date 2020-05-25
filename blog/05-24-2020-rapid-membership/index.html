@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {0xc0000fad80 0xc000128e80}
+  <title>Rapid: Distributed Membership Service at Scale</title>
+  <meta property="og:title" content="Rapid: Distributed Membership Service at Scale" />
+  <meta property="og:image" content="https://mogarg.github.io/img/mohit.jpg" />
+  <meta name="description" content="Software Platform Engineer with experience leveraging agile, DevOps, and CI/CD to manage large scale distributed platforms both on prem and in public cloud.">
+  <meta property="og:description" content="Software Platform Engineer with experience leveraging agile, DevOps, and CI/CD to manage large scale distributed platforms both on prem and in public cloud." />
+  <meta name="author" content="Mohit Garg">
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/devicons/1.8.0/css/devicons.min.css' rel='stylesheet'>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+  
+  <link href="https://mogarg.github.io/css/resume.css" rel="stylesheet">
+  <link href="https://mogarg.github.io/css/tweaks.css" rel="stylesheet">
+  <meta name="generator" content="Hugo 0.71.0" />
+  
+   
+  
+</head>
+<body id="page-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+  <a class="navbar-brand js-scroll-trigger" href="#page-top">
+    <span class="d-block d-lg-none">Mohit Garg</span>
+    <span class="d-none d-lg-block">
+      <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="/img/mohit.jpg" alt="">
+    </span>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="/#about">About</a>
+      </li>
+      
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="/#skills">Skills</a>
+          </li>
+      
+      
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="/#projects">Projects</a>
+          </li>
+      
+      
+      
+      
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="/#experience">Experience</a>
+          </li>
+      
+      
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="/#education">Education</a>
+          </li>
+      
+      
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="/#blog">Blog</a>
+          </li>
+      
+    </ul>
+  </div>
+</nav>
+  <div class="container-fluid p-0">
+    
+<nav aria-label="breadcrumb">
+  <ol  class="breadcrumb">
+    
+
+
+
+
+
+<li class="breadcrumb-item">
+  <a href="https://mogarg.github.io/">Home</a>
+</li>
+
+
+<li class="breadcrumb-item">
+  <a href="https://mogarg.github.io/blog/">Blogs</a>
+</li>
+
+
+<li class="breadcrumb-item active">
+  <a href="https://mogarg.github.io/blog/05-24-2020-rapid-membership/">Rapid: Distributed Membership Service at Scale</a>
+</li>
+
+  </ol>
+</nav>
+
+
+
+
+<section class="resume-section p-3 p-lg-5 d-flex d-column">
+  <div class="my-auto">
+    <h2 class="mb-0"><span class="text-primary">Rapid: Distributed Membership Service at Scale</span></h2>
+    <span class="text-primary">May 24, 2020</span>
+    <p>This article presents a summary of the paper by <a href="https://www.usenix.org/conference/atc18/presentation/suresh">Lalith Suresh, Dahlia Malkhi, Parikshit Gopalan, Ivan Porto Carreiro, and Zeeshan Lokhandwala</a>, which appeared in USENIX Annual Technical Conference 2018. I also <a href="#presentation">presented this paper</a> in the <a href="https://distsysreadinggroup.slack.com/">Distributed Systems Reading Group</a>, a weekly public paper reading group hosted by <a href="https://cse.buffalo.edu/~demirbas/">Prof Murat Debirmas</a>.</p>
+<p>This paper primarily about <code>membership</code> in distributed systems in the presence of <a href="https://www.cs.jhu.edu/~huang/paper/grayfailure-hotos17.pdf">gray failures</a>. While <code>crash</code> faults are relatively easy to detect and fix, gray failures often go undetected or take a long time to localize and fix.
+The authors whet our interests by setting up an experiment in a 400 node akka cluster which works on a <a href="https://en.wikipedia.org/wiki/Gossip_protocol">gossip</a> based membership model. They wait for the cluster to stabilize i.e. each node outputs the size of the members list.</p>
+<p><img src="/img/rapid-akka-before.png?raw=true" alt="Akka Cluster"></p>
+<p>They now introduce packet-loss failures in 1% of nodes. This is where everything goes haywire. Due to the nature of the gossip based membership service, the correct nodes start to accuse each other and the membership view becomes unstable. At times, even some benign processes are removed from the membership view. This is problematic because expensive failure recovery and data migration services are triggered on <code>view-change</code>. In case of an unstable membership service this can lead to performance degradation and outages.</p>
+<p><img src="/img/rapid-akka-after.png?raw=true" alt="Akka Cluster"></p>
+<p>Additionaly, at any given time during the different nodes have different views of the membership. In the presence of inconsistencies, any service which utilize the membership service to get the ground truth about the cluster would not work properly.</p>
+<p>Hence, this paper is about two features that the authors contend are inadequate in membership services today.</p>
+<ol>
+<li>Stability: robustness against asymmetric network failures, flip-flops, packet losses etc.</li>
+<li>Consistency: the processes see the same sequence of membership changes.</li>
+</ol>
+<p>The solution which espouses these features is <code>Rapid: A Distributed Membership Service at Scale</code>. The service consists of three main components which follow a functional order.</p>
+<ol>
+<li>Monitoring Overlay.</li>
+<li>Membership change proposal.</li>
+<li>View-Change consensus</li>
+</ol>
+<h2 id="monitoring-overlay">Monitoring Overlay</h2>
+<p>A monitoring overlay is formed with each node is monitored by <code>K</code> nodes. In this case a node that monitors is called an <code>observer</code>, and the observee is called a <code>subject</code>.</p>
+<h3 id="construction-of-the-overlay">Construction of the overlay</h3>
+<p>The monitoring overlay is based on an <a href="https://www.youtube.com/watch?v=aOyoVckhaGc"><code>expander graph</code></a>. Expander graphs are graphs with a low degree and high connectivity. The authors use <code>K pseudo-random rings</code> to form an expander graph due to the fact that,</p>
+<blockquote>
+<p>.. a random K-regular graph is very likely to be a good expander for <code>K</code> $\geq$ <code>3</code>.</p>
+</blockquote>
+<p>Specifically, in a ring containing the full list of members, a pair of processes <code>(o, s)</code> form an observer/subject edge if <code>o</code> precedes <code>s</code> in a ring.</p>
+<p><img src="/img/rapid-ring.png?raw=true" alt="Monitoring overlay"></p>
+<p><code>K</code> is small (could be 10 even if the cluster size is 1000). The observers form a directed graph to the subjects. <code>Rapid</code> follows a template based model where the edge-failure detectors are provided by the user. These detectors could range from a simple heartbeat to observing TCP packets and application monitoring state.</p>
+<p>Monitoring alerts like <code>REMOVE</code> (on detecting failure) and <code>JOIN</code> are disseminated by the observers using scalable best-effort broadcast. Furthermore, these alerts are irrevocable.</p>
+<h3 id="multi-process-cut-detection">Multi-process cut detection</h3>
+<p>Each process maintains a <code>M(o, s)</code> which is set to 1 if an alert is received from an observer <code>o</code> about proces <code>s</code>. The alert tally for a subject s is <code>tally(s) = M(*, s)</code>. A process would,</p>
+<blockquote>
+<p>delay proposing a configuration change until there is at least one process in stable report mode and there is no process in unstable report mode.</p>
+</blockquote>
+<p>A process <code>s</code> is considered to be in stable report mode by a process <code>p</code> if there exist at least <code>H</code> (high watermark) alerts about <code>s</code>, otherwise <code>s</code> is in an unstable report mode is in between <code>L</code> and <code>H</code> where <code>1</code> $\leq$ <code>L</code> $\leq$ <code>H</code> $\leq$ <code>K</code>.</p>
+<h4 id="special-cases">Special cases</h4>
+<p>Processes <code>s</code> can get stuck in unstable mode if,</p>
+<ol>
+<li>An observer <code>o</code> for <code>s</code> is itself faulty. In this case an implicit-alert is applied from <code>o</code> to <code>s</code>.</li>
+<li>A process <code>s</code> has a good connection with a subset of observers, but bad with others. In this case, if <code>s</code> is in unstable mode for a certain time period, the observers echo the alert about <code>s</code>.</li>
+</ol>
+<p>After this stage each process have a new configuration to send to other processes.</p>
+<h3 id="view-change-with-consensus">View-change with consensus</h3>
+<p>A consistent configuration is achieved by treating the cut detected by each process from the previous stage as a proposal to a Fast Paxos instance.</p>
+<blockquote>
+<p>The counting protocol itself uses gossip to disseminate and aggregate a bitmap of “votes” for each unique proposal. Each process sets a bit in the bitmap of a proposal to reflect its vote. As soon as a process has a proposal for which three quarters of the cluster has voted, it decides on that proposal.</p>
+</blockquote>
+<h3 id="evaluation">Evaluation</h3>
+<p>Compared against <code>Zookeeper</code> (Logically centralized configuration service) and <code>Memberlist</code> (Gossip based membership).</p>
+<p>Rapid provides,</p>
+<ul>
+<li>Better bootstrap times</li>
+</ul>
+<p><img src="/img/rapid-bootstrap.png" alt="Bootstrap"></p>
+<ul>
+<li>Robustness in the presence of packet loss.</li>
+</ul>
+<p><img src="/img/rapid-packet-loss.png" alt="One percent packet loss"></p>
+<ul>
+<li>, and in the case of network partitions</li>
+</ul>
+<p><img src="/img/rapid-partition.png" alt="One percent network partition"></p>
+<h3 id="presentation">Presentation</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/Bdbkeb-B3RY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+    
+    <ul class="tags">
+    
+      <li><a class="tag" href="/tags/membership">membership</a></li>
+    
+      <li><a class="tag" href="/tags/distributed-systems">distributed systems</a></li>
+    
+      <li><a class="tag" href="/tags/gray-failures">gray failures</a></li>
+    
+      <li><a class="tag" href="/tags/cloud">cloud</a></li>
+    
+</ul>
+
+  </div>
+</section>
+
+
+    <span style="color: #999999; font-size: 60%;">Nifty <a href="https://codepen.io/wbeeftink/pen/dIaDH">tech tag lists</a> from <a class="pen-owner-link" href="https://codepen.io/wbeeftink">Wouter Beeftink</a> </span>
+    
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  
+  <script src="/js/resume.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111449365-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111449365-1');
+  </script>
+  
+
+  
+</body>
+</html>

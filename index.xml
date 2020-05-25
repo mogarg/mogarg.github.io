@@ -49,6 +49,16 @@
     </item>
     
     <item>
+      <title>Rapid: Distributed Membership Service at Scale</title>
+      <link>https://mogarg.github.io/blog/05-24-2020-rapid-membership/</link>
+      <pubDate>Sun, 24 May 2020 16:13:10 -0400</pubDate>
+      
+      <guid>https://mogarg.github.io/blog/05-24-2020-rapid-membership/</guid>
+      <description>This article presents a summary of the paper by Lalith Suresh, Dahlia Malkhi, Parikshit Gopalan, Ivan Porto Carreiro, and Zeeshan Lokhandwala, which appeared in USENIX Annual Technical Conference 2018. I also presented this paper in the Distributed Systems Reading Group, a weekly public paper reading group hosted by Prof Murat Debirmas.
+This paper primarily about membership in distributed systems in the presence of gray failures. While crash faults are relatively easy to detect and fix, gray failures often go undetected or take a long time to localize and fix.</description>
+    </item>
+    
+    <item>
       <title>Elpis</title>
       <link>https://mogarg.github.io/projects/creations/elpis/</link>
       <pubDate>Tue, 11 Sep 2018 12:41:05 -0500</pubDate>
